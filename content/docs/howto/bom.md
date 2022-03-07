@@ -1,22 +1,24 @@
 ---
-title: "How to Access the Bill of Materials"
+title: "How to Access the Software Bill of Materials"
 weight: 345
 menu:
   main:
     parent: "howto"
-    name: "Access the Bill of Materials"
+    name: "Access the SBOM"
 ---
 
-This documentation explains how to access the bill of materials (BOM) on an app image built using Paketo buildpacks. For more in-depth field definitions and details check out the [bill of materials concept page][concepts/bom].
+This documentation explains how to access the software bill of materials (SBOM) on an
+app image built using Paketo buildpacks. For more in-depth field definitions
+and details check out the [software bill of materials concept page][concepts/bom].
 
 
-## Access the Bill of Materials on a Sample Node Application
+## Access the Software Bill of Materials on a Sample Node Application
 
-You can access the bill of materials in the metadata of any app image created with Paketo buildpacks.
+You can access the software bill of materials in the metadata of any app image created with Paketo buildpacks.
 
 1. Follow the [Node.js Getting Started tutorial][tutorial/nodejs] to build the Node.js `paketo-demo-app` image.
 
-2. Use the pack CLI retrieve the bill of materials metadata.
+2. Use the pack CLI retrieve the software bill of materials metadata.
 {{< code/copyable >}}
 pack inspect-image paketo-demo-app --bom
 {{< /code/copyable >}}
@@ -144,12 +146,21 @@ pack inspect-image paketo-demo-app --bom
 }
 {{< /code/output >}}
 
-**Note:** At this time, only the Node.js and Java buildpacks support for the full set of bill of materials fields described in the [BOM concepts docs][concepts/bom]. There is an ongoing effort to build out the full BOM in all of our buildpacks, and the related documentation will be updated as new buildpacks are included.
+**Note:** At this time, only the Node.js and Java buildpacks support for the
+full set of software bill of materials fields described in the [SBOM concepts
+docs][concepts/bom]. There is an ongoing effort to build out the full SBOM in
+all of our buildpacks, and the related documentation will be updated as new
+buildpacks are included.
 
-## See Build-Time Dependencies in the BOM
-The bill of materials from the example above contains entries for every dependency on the final application image. However, it does not contain any dependencies that may have been used in the image build process but are not on the final image.
+## See Build-Time Dependencies in the SBOM
+The software bill of materials from the example above contains entries for every
+dependency on the final application image. However, it does not contain any
+dependencies that may have been used in the image build process but are not on
+the final image.
 
-Bill of materials entries are collected for build-time dependencies, but there is currently no way to access these entries. This will be available in future iterations of the bill of materials.
+Software bill of materials entries are collected for build-time dependencies, but there
+is currently no way to access these entries. This will be available in future
+iterations of the software bill of materials.
 
 <!-- References -->
 
